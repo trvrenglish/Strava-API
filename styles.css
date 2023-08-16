@@ -1,0 +1,13 @@
+#map {
+    height: 800px;
+    width: 800px;
+    display: inline-block;
+}
+
+body{
+    text-align: center;
+}
+
+.popup-address p {
+    font-weight: bold;
+ }
