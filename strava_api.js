@@ -26,7 +26,6 @@ function getActivities(res) {
         "https://tile.jawg.io/jawg-terrain/{z}/{x}/{y}{r}.png?access-token=LxxdRh2WgA3b9Cs6Zo2HvwYIOxmi9mso32RRvHI1ag8OJHfvICCekhFPKtDxrOC1",
         {}
       ).addTo(map);
-      console.log(data);
 
       data.forEach(function (activity) {
         var coordinates = L.Polyline.fromEncoded(
@@ -58,8 +57,6 @@ function getActivities(res) {
             .openOn(map);
         });
         map.on("zoomend", function () {
-          console.log(map.getZoom());
-
           if (map.getZoom() < 12) {
             var bounds = polyline.getBounds();
             var centerLatLng = bounds.getCenter();
@@ -117,9 +114,9 @@ function reAuthorize() {
 
     // The information below can be found at https://www.strava.com/settings/api once you create an API application
     body: JSON.stringify({
-      client_id: "[REPLACE_WITH_CLIENT_ID]",
-      client_secret: "[REPLACE_WITH_CLIENT_SECRET]",
-      refresh_token: "[REPLACE_WITH_REFRESH_TOKEN]",
+      client_id: "112194",
+      client_secret: "7598102ddc7589d0e381a43bb9f6a776073c26f1",
+      refresh_token: "6eb570cc320bba56b0aa278db0ca820418d7f097",
       grant_type: "refresh_token",
     }),
   })
